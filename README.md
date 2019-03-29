@@ -6,6 +6,8 @@
 ### The paper can also be found in arXiv.org under the title given above. 
 ##  Contact: For questions and help in using this software sdevi@entropicdynamics.com
 
+## The software is developed in OCTAVE (which is compatible with MATLAB). The executable can be downloaded from https://www.gnu.org/software/octave
+
 
 ## Scope: 
 ### The q-Gaussia distribution can be used for a) Stock returns Analysis and b) Entropy estimation for possible use in the construction of Risk Optimal Portfolios
@@ -33,5 +35,27 @@
 ### Minimal Usage:
 ### [ mom  qparm  fisher_ err  ks] =   qstock_main( file_name,  col,  mm1,  dd1,  yr1,  mm2,  dd2, yr2,  d_days,  n_days)
 
+
+## Mandatory Input Parameters 
+### file_name: Name of the file containing stock data (preferably daily data) in .csv format
+### ex: file_name = '/full path/name.csv'
+
+### col:  column of the data to be used (default = 8)
+
+### [mm1, dd1, yr1] and [mm2, dd2, yr2] are the dates for data range to choose  for parameter estimation and analysis. 
+### Make sure that there are at least 1000 samples between the initial and final dates. More the better for the  estimation of parameters. 
+
+### d_days: interval in time delays (in days) to compute parameter(default = 1)
+
+### n_days: total no. of time delays in days, (default = 10).
+### ex: if d_days = 2, n_days = 60, the parameters are computed for  2, 4, 6-----120 day time delays
+
+#### Rest of the input parameters ( Best is to use defaults)
+
+####ql, qh , btl, bth, mul are the initial values for q, beta and mu to start optimization (default: 1.2, 1.66, .5, 1.5, -.0005 respectively) 
+#### niter: no. of iterations for parameter estimate algorithm ( default =8) 
+#### opt_kptheta: option to estimate beta, mu only for all delays(0)   or estimate q, beta and mu for all delays(=1). Default = 0 For this option q is  estimated only for 1 day return and kept constant for all other delays. This is the reccomended option.
+
+ Output: 
 
   
