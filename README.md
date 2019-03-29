@@ -50,12 +50,27 @@
 ### n_days: total no. of time delays in days, (default = 10).
 ### ex: if d_days = 2, n_days = 60, the parameters are computed for  2, 4, 6-----120 day time delays
 
-#### Rest of the input parameters ( Best is to use defaults)
+## Rest of the input parameters ( Best is to use defaults)
 
-####ql, qh , btl, bth, mul are the initial values for q, beta and mu to start optimization (default: 1.2, 1.66, .5, 1.5, -.0005 respectively) 
+#### ql, qh , btl, bth, mul are the initial values for q, beta and mu to start optimization (default: 1.2, 1.66, .5, 1.5, -.0005 respectively) 
 #### niter: no. of iterations for parameter estimate algorithm ( default =8) 
 #### opt_kptheta: option to estimate beta, mu only for all delays(0)   or estimate q, beta and mu for all delays(=1). Default = 0 For this option q is  estimated only for 1 day return and kept constant for all other delays. This is the reccomended option.
 
- Output: 
+## Output: 
+
+### cmom: cell array containing first four moments of the returns for all delays. It is an n x 4 matrix, n = no. of delays 
+### [columns) = [ mean std. devn, skew, kurtosis]
+
+### parm: cell array containing the Tsallis parameters  for all delays. n x m matrix, n = no. of delays,  m = delay value + no. of parameters.
+### qparm (columns) = [delay  q beta mu ]
+
+### fisher_err: cell array of theoretical and measured fisher errors in the Tsallis parameter estimates
+### fisher_err(columns) = [erqm errbm ermum erqe erbe ermue]
+
+### ks:  cell array containing results of  Kolmogorov-Smirnov test (KS test) 
+### ks(columns) = [Dcritical    Dmodel (-ve returns)   Dcritical   Dmodel (+ve returns)
+
+### Kolmogorov-Smirnov test  is used to determine the  goodness of fit of the model with the data. 
+
 
   
