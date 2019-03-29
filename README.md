@@ -59,7 +59,7 @@
 ## Output: 
 
 ### cmom: cell array containing first four moments of the returns for all delays. It is an n x 4 matrix, n = no. of delays 
-### [columns) = [ mean std. devn, skew, kurtosis]
+### cmom[columns) = [ mean std. devn, skew, kurtosis]
 
 ### qparm: cell array containing the Tsallis parameters  for all delays. n x m matrix, n = no. of delays,  m = delay value + no. of parameters.
 ### qparm (columns) = [delay  q beta mu ]
