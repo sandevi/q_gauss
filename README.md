@@ -61,7 +61,7 @@
 ### cmom: cell array containing first four moments of the returns for all delays. It is an n x 4 matrix, n = no. of delays 
 ### [columns) = [ mean std. devn, skew, kurtosis]
 
-### parm: cell array containing the Tsallis parameters  for all delays. n x m matrix, n = no. of delays,  m = delay value + no. of parameters.
+### qparm: cell array containing the Tsallis parameters  for all delays. n x m matrix, n = no. of delays,  m = delay value + no. of parameters.
 ### qparm (columns) = [delay  q beta mu ]
 
 ### fisher_err: cell array of theoretical and measured fisher errors in the Tsallis parameter estimates
